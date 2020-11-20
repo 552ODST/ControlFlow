@@ -12,7 +12,14 @@ namespace ControlFlow
         // be validated).  Negative numbers should return "Invalid".
         public static string AreYouValid(int number)
         {
-            return default;
+            if (number > 1 && number < 10)
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "Invalid";
+            }
         }
 
         // 1.2 - Write a method which takes two integers and returns the maximum of the two. If they
