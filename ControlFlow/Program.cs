@@ -26,17 +26,27 @@ namespace ControlFlow
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
         {
-            return default;
+           int result = (number1 > number2) ? number1 : number2;
+            return result;
         }
-
         // 1.3 - Write a method which takes two integers, the width and height of an image. Then
         // return a string to tell if the image is "Landscape" or "Portrait". Return "Square" if
         // they are equal. Assume non-negative values.
         public static string LandscapeOrPortrait(int width, int height)
         {
-            return default;
+            if (width > height)
+            {
+                return Convert.ToString("Landscape");
+            }
+            else if (width < height)
+            {
+                return Convert.ToString("Portrait");
+            }
+            else 
+            {
+                return Convert.ToString("Square");
+            }
         }
-
         // 1.4 - Your job is to write a program for a speed camera. For simplicity, ignore the details
         // such as camera, sensors, etc and focus purely on the logic.
         //
@@ -52,9 +62,32 @@ namespace ControlFlow
         // Suspended" instead. Don't Worry about input validation.
         public static string SpeedTrap(int speedLimit, int speedCar)
         {
-            return default;
-        }
+            int demeritScore = 0;
+            int speedDifference = speedCar - speedLimit;
 
+            if (speedCar <= speedLimit)
+            {
+                return Convert.ToString("Okay");
+            }
+            else
+            {
+                for (int tooFast = 5; tooFast <= speedDifference; tooFast += 1)
+                {
+                    if (tooFast % 5 == 0)
+                    {
+                        demeritScore++;
+                    }
+                }
+            }
+            if (demeritScore > 12)
+            {
+                return Convert.ToString("License Suspended");
+            }
+            else
+            {
+                return Convert.ToString(demeritScore);
+            }
+        }
         // Part 2, Control Flow. Come back to this section after completing the For/Foreach/While loops.
 
         // 2.1 - Write a method to count how many integers between two numbers are divisible by a divider with
@@ -62,14 +95,24 @@ namespace ControlFlow
         // output should be 2. Don't Worry about input validation.
         public static int DivisibleByNumber(int minNumber, int maxNumber, int divider)
         {
+            //for (minNumber = 1; minNumber <= 100; minNumber++)
+            //{
+            //    if (minNumber % 3 == 0)
+            //    {
+            //        return minNumber;
+            //    }
+                       
             return default;
+
         }
 
         // 2.2 - Write a method to calculate the sum of all the integers and return it. For example if
         // the program enters (2, 3, 5, 1) then the return should be 11. Don't Worry about input validation.
         public static int SumIntegers(params int[] numbers)
         {
-            return default;
+            int sumNumbers = 0
+
+            for (int listNumbers = )
         }
 
         // 2.3 - Write a method to compute the factorial of an integer return it. For example, if the
