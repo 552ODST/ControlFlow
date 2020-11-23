@@ -137,16 +137,14 @@ namespace ControlFlow
         // the program should return 8.
         public static int MaximumNumber(params int[] numbers)
         {
-            int maxnumber = 0;
+            int max = numbers[0];
 
             foreach (int digit in numbers)
             {
-                for (int i = 0; i < digit; i++)
-                    if (i == digit)
-                        maxnumber++;
+                if (digit > max)
+                    max = digit;
             }
-            return maxnumber;
-
+            return max;
         }
     }
 
