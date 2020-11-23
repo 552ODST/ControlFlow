@@ -95,24 +95,26 @@ namespace ControlFlow
         // output should be 2. Don't Worry about input validation.
         public static int DivisibleByNumber(int minNumber, int maxNumber, int divider)
         {
-            //for (minNumber = 1; minNumber <= 100; minNumber++)
-            //{
-            //    if (minNumber % 3 == 0)
-            //    {
-            //        return minNumber;
-            //    }
-                       
-            return default;
+            int divisibles = 0;
 
+            for (int i = minNumber; i <= maxNumber; i++)
+                if (i % divider == 0)
+                    divisibles++;
+
+            return divisibles;
         }
 
         // 2.2 - Write a method to calculate the sum of all the integers and return it. For example if
         // the program enters (2, 3, 5, 1) then the return should be 11. Don't Worry about input validation.
         public static int SumIntegers(params int[] numbers)
         {
-            int sumNumbers = 0
+            int sum = 0;
 
-            for (int listNumbers = )
+            foreach (int integer in numbers)
+            {
+                sum += integer;
+            }
+            return sum;
         }
 
         // 2.3 - Write a method to compute the factorial of an integer return it. For example, if the
@@ -120,7 +122,14 @@ namespace ControlFlow
         // that 0! = 1.
         public static int FindFactorial(int number)
         {
-            return default;
+            int product = 1;
+
+            while (number != 0)
+            {
+                product = product * number;
+                number = number - 1;
+            }
+            return product;
         }
 
         // 2.4 - Write a method that takes a series of integers separated by commas. Then find the
@@ -128,7 +137,16 @@ namespace ControlFlow
         // the program should return 8.
         public static int MaximumNumber(params int[] numbers)
         {
-            return default;
+            int maxnumber = 0;
+
+            foreach (int digit in numbers)
+            {
+                for (int i = 0; i < digit; i++)
+                    if (i == digit)
+                        maxnumber++;
+            }
+            return maxnumber;
+
         }
     }
 
