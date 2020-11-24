@@ -86,13 +86,20 @@ namespace ControlFlow
         // output should be 2.
         public static int DivisibleByNumber(int minNumber, int maxNumber, int divider)
         {
-            return default;
+            var divisible = 0;
+            for (var i = minNumber; i <= maxNumber; i++)
+                if (i % divider == 0)
+                    divisible++;
+            return divisible;
+
+
         }
 
         // 2.2 - Write a method to calculate the sum of all the integers and return it. For example if
         // the program enters (2, 3, 5, 1) then the return should be 11.
         public static int SumIntegers(params int[] numbers)
         {
+            var i = numbers[SumIntegers(  )];
             return default;
         }
 
