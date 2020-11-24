@@ -12,14 +12,22 @@ namespace ControlFlow
         // be validated).  Negative numbers should return "Invalid".
         public static string AreYouValid(int number)
         {
-            return default;
-        }
-
+            if (number > 1 && number < 10)
+               
+                return "Valid";
+            else
+            
+                return "Invalid";
+            
+        } 
         // 1.2 - Write a method which takes two integers and returns the maximum of the two. If they
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
         {
-            return default;
+            if (number1 >= number2)
+                return number1;
+            else
+                return number2;
         }
 
         // 1.3 - Write a method which takes two integers, the width and height of an image. Then
@@ -27,7 +35,12 @@ namespace ControlFlow
         // they are equal. Assume non-negative values.
         public static string LandscapeOrPortrait(int width, int height)
         {
-            return default;
+            if (width < height)
+                return "Portrait";
+            if (width > height)
+                return "Landscape";
+            else
+                return "Square";
         }
 
         // 1.4 - Your job is to write a program for a speed camera. For simplicity, ignore the details
@@ -45,7 +58,22 @@ namespace ControlFlow
         // Suspended" instead. Don't Worry about input validation.
         public static string SpeedTrap(int speedLimit, int speedCar)
         {
-            return default;
+            var SD = speedCar - speedLimit;
+            var DS = 0;
+            if (speedLimit >= speedCar)
+                return Convert.ToString("Okay");
+            else
+            {
+                for (int TF = 5;
+                    TF <= SD; TF += 1)
+                    if (TF % 5 == 0)
+                        DS++;
+                if (DS > 12)
+                    return Convert.ToString("License Suspended");
+                else
+                    return Convert.ToString(DS);
+            }
+
         }
 
         // Part 2, Control Flow. Come back to this section after completing the For/Foreach/While loops.
