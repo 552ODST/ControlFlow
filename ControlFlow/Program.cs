@@ -22,7 +22,7 @@ namespace ControlFlow
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
         {
-            return default;
+            return (number1 > number2) ? number1 : number2;
         }
 
         // 1.3 - Write a method which takes two integers, the width and height of an image. Then
