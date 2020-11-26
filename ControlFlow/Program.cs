@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ControlFlow
 {
@@ -16,13 +17,14 @@ namespace ControlFlow
         public static string AreYouValid(int number)
         {
             if (number > 1 && number < 10)
-               
+
                 return "Valid";
             else
-            
+
                 return "Invalid";
-            
-        } 
+
+        }
+
         // 1.2 - Write a method which takes two integers and returns the maximum of the two. If they
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
@@ -68,7 +70,8 @@ namespace ControlFlow
             else
             {
                 for (int TF = 5;
-                    TF <= SD; TF += 1)
+                    TF <= SD;
+                    TF += 1)
                     if (TF % 5 == 0)
                         DS++;
                 if (DS > 12)
@@ -99,8 +102,12 @@ namespace ControlFlow
         // the program enters (2, 3, 5, 1) then the return should be 11.
         public static int SumIntegers(params int[] numbers)
         {
-            var i = numbers[SumIntegers(  )];
-            return default;
+            var sum = 0;
+            foreach (int integer in numbers)
+                sum += integer;
+            return sum;
+
+
         }
 
         // 2.3 - Write a method to compute the factorial of an integer return it. For example, if the
@@ -108,21 +115,32 @@ namespace ControlFlow
         // that 0! = 1.
         public static int FindFactorial(int number)
         {
-            return default;
+            int ans = number;
+            if (ans == 0)
+                return 1;
+
+            for (int i = number - 1; i > 0; i--)
+                ans *= i;
+
+            return ans;
         }
 
         // 2.4 - Write a method that takes an array of integers. Then find the maximum of the numbers
         // and return it. For example, if the numbers are {5, 3, 8, 1, 4}, the program should return 8.
         public static int MaximumNumber(params int[] numbers)
         {
-            return default;
+            int max = 0;
+            for (int i = 0; i < numbers.Length; i++)
+                if (numbers[i] > max)
+                    max = numbers[i];
+            return max;
         }
-    }
 
-    internal static class Program
-    {
-        private static void Main()
+        internal static class Program
         {
+            private static void Main()
+            {
+            }
         }
     }
 }
