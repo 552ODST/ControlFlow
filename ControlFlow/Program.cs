@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System;
 
 namespace ControlFlow
 {
@@ -15,14 +12,28 @@ namespace ControlFlow
         // be validated).  Negative numbers should return "Invalid".
         public static string AreYouValid(int number)
         {
-            return default;
+            if (number > 1 && number < 10)
+            {
+                return "Valid";
+            }
+            else
+            {
+            return "Invalid";
+            }
         }
 
         // 1.2 - Write a method which takes two integers and returns the maximum of the two. If they
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
         {
-            return default;
+            if (number1 <= number2)
+            {
+                return number2;
+            }
+            else
+            {
+                return number1;
+            }
         }
 
         // 1.3 - Write a method which takes two integers, the width and height of an image. Then
@@ -30,7 +41,18 @@ namespace ControlFlow
         // they are equal. Assume non-negative values.
         public static string LandscapeOrPortrait(int width, int height)
         {
-            return default;
+            if(width > height)
+            {
+            return "Landscape";
+            }
+            else if(height > width)
+            {
+            return "Portrait";
+            }
+            else
+            {
+            return "Square";
+            }
         }
 
         // 1.4 - Your job is to write a program for a speed camera. For simplicity, ignore the details
@@ -55,14 +77,14 @@ namespace ControlFlow
 
         // 2.1 - Write a method to count how many integers between two numbers are divisible by a divider with
         // no remainder. Return the count. For example, if minNumber = 1 and maxNumber = 6, and the divider is 3 then
-        // output should be 2.
+        // output should be 2. Don't Worry about input validation.
         public static int DivisibleByNumber(int minNumber, int maxNumber, int divider)
         {
             return default;
         }
 
         // 2.2 - Write a method to calculate the sum of all the integers and return it. For example if
-        // the program enters (2, 3, 5, 1) then the return should be 11.
+        // the program enters (2, 3, 5, 1) then the return should be 11. Don't Worry about input validation.
         public static int SumIntegers(params int[] numbers)
         {
             return default;
@@ -76,18 +98,20 @@ namespace ControlFlow
             return default;
         }
 
-        // 2.4 - Write a method that takes an array of integers. Then find the maximum of the numbers
-        // and return it. For example, if the numbers are {5, 3, 8, 1, 4}, the program should return 8.
+        // 2.4 - Write a method that takes a series of integers separated by commas. Then find the
+        // maximum of the numbers and return it. For example, if the numbers are “5, 3, 8, 1, 4",
+        // the program should return 8.
         public static int MaximumNumber(params int[] numbers)
         {
             return default;
         }
     }
 
-    internal static class Program
+    class Program
     {
-        private static void Main()
+        static void Main()
         {
+            // This is intentionally left empty
         }
     }
 }
