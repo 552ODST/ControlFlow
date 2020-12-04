@@ -15,14 +15,28 @@ namespace ControlFlow
         // be validated).  Negative numbers should return "Invalid".
         public static string AreYouValid(int number)
         {
-            return default;
+            if (number > 1 && number < 10)
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "Invalid";
+            }
         }
 
         // 1.2 - Write a method which takes two integers and returns the maximum of the two. If they
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
         {
-            return default;
+            if (number1 >= number2)
+            {
+                return number1;
+            }
+            else
+            {
+                return number2;
+            }
         }
 
         // 1.3 - Write a method which takes two integers, the width and height of an image. Then
@@ -30,7 +44,18 @@ namespace ControlFlow
         // they are equal. Assume non-negative values.
         public static string LandscapeOrPortrait(int width, int height)
         {
-            return default;
+            if (width > height)
+            {
+                return "Landscape";
+            }
+            if (height > width)
+            {
+                return "Portrait";
+            }
+            else
+            {
+                return "Square";
+            }
         }
 
         // 1.4 - Your job is to write a program for a speed camera. For simplicity, ignore the details
@@ -48,8 +73,23 @@ namespace ControlFlow
         // Suspended" instead. Don't Worry about input validation.
         public static string SpeedTrap(int speedLimit, int speedCar)
         {
-            return default;
+             int demeritPoints = (speedCar - speedLimit) / 5;
+
+            if (speedCar > speedLimit && demeritPoints <= 12)
+            {
+                return demeritPoints.ToString();
+            }
+            else if (demeritPoints > 12)
+            {
+                return "License Suspended";
+            }
+            else
+            {
+                return "Okay";
+            }
         }
+
+
 
         // Part 2, Control Flow. Come back to this section after completing the For/Foreach/While loops.
 
@@ -58,14 +98,30 @@ namespace ControlFlow
         // output should be 2.
         public static int DivisibleByNumber(int minNumber, int maxNumber, int divider)
         {
-            return default;
+            var result = 0;
+            for (var i = minNumber; i <= maxNumber; i++)
+            {
+                if (i % divider == 0)
+                {
+                    result++; 
+                }
+            }
+
+            return result;
         }
 
         // 2.2 - Write a method to calculate the sum of all the integers and return it. For example if
         // the program enters (2, 3, 5, 1) then the return should be 11.
         public static int SumIntegers(params int[] numbers)
         {
-            return default;
+            var total = 0;
+
+            foreach (var number in numbers)
+            {
+                total += number;
+            }
+
+            return total;
         }
 
         // 2.3 - Write a method to compute the factorial of an integer return it. For example, if the
@@ -73,14 +129,32 @@ namespace ControlFlow
         // that 0! = 1.
         public static int FindFactorial(int number)
         {
-            return default;
+            var result = 1;
+
+            while (number != 0)
+            {
+                result *= number;
+                number--; 
+            }
+
+            return result;
         }
 
         // 2.4 - Write a method that takes an array of integers. Then find the maximum of the numbers
         // and return it. For example, if the numbers are {5, 3, 8, 1, 4}, the program should return 8.
         public static int MaximumNumber(params int[] numbers)
         {
-            return default;
+            var result = numbers[0];
+
+            for (var i = 0; i < numbers.Length - 1; i++)
+            {
+                if (numbers[i] > result)
+                {
+                    result = numbers[i];
+                }
+            }
+
+            return result;
         }
     }
 
