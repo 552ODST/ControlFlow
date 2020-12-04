@@ -18,7 +18,7 @@ namespace ControlFlow
             }
             else
             {
-            return "Invalid";
+                return "Invalid";
             }
         }
 
@@ -70,8 +70,33 @@ namespace ControlFlow
         // Suspended" instead. Don't Worry about input validation.
         public static string SpeedTrap(int speedLimit, int speedCar)
         {
-            return default;
+            int speedDifference = speedCar - speedLimit;
+            int demerit = 0;
+            if (speedCar <= speedLimit)
+            {
+                return "Okay";
+            }
+            else
+            {
+                for (int i = 5; i <= speedDifference; i++)
+                {
+                    if (i % 5 == 0)
+                    {
+                        demerit++;
+                    }                    
+                }
+            }
+
+            if (demerit > 12)
+            {
+                return "License Suspended";
+            }
+            else
+            {
+                return demerit.ToString();
+            }
         }
+
 
         // Part 2, Control Flow. Come back to this section after completing the For/Foreach/While loops.
 
@@ -80,14 +105,28 @@ namespace ControlFlow
         // output should be 2. Don't Worry about input validation.
         public static int DivisibleByNumber(int minNumber, int maxNumber, int divider)
         {
-            return default;
+            var result = 0;
+            for (var i = minNumber; i <= maxNumber; i++)
+            {
+                if(i % divider == 0)
+                {
+                    result++;
+                }
+            }
+            return result;
         }
 
         // 2.2 - Write a method to calculate the sum of all the integers and return it. For example if
         // the program enters (2, 3, 5, 1) then the return should be 11. Don't Worry about input validation.
         public static int SumIntegers(params int[] numbers)
         {
-            return default;
+            var total = 0;
+
+            foreach (var number in numbers)
+            {
+                total += number;
+            }    
+            return total;
         }
 
         // 2.3 - Write a method to compute the factorial of an integer return it. For example, if the
@@ -95,7 +134,14 @@ namespace ControlFlow
         // that 0! = 1.
         public static int FindFactorial(int number)
         {
-            return default;
+            var result = 1;
+            while (number != 0)
+            {
+                result *= number;
+                number--;
+            }
+
+            return result;
         }
 
         // 2.4 - Write a method that takes a series of integers separated by commas. Then find the
@@ -103,7 +149,17 @@ namespace ControlFlow
         // the program should return 8.
         public static int MaximumNumber(params int[] numbers)
         {
-            return default;
+            var result = numbers[0];
+
+            for (var i = 0; i < numbers.Length - 1; i++)
+            {
+                if (numbers[i] > result)
+                {
+                    result = numbers[i];
+                }
+            }
+            
+            return result;
         }
     }
 
