@@ -15,7 +15,14 @@ namespace ControlFlow
         // be validated).  Negative numbers should return "Invalid".
         public static string AreYouValid(int number)
         {
-            return default;
+            if(number > 1 && number < 10)
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "Invalid";
+            }
         }
 
         // 1.2 - Write a method which takes two integers and returns the maximum of the two. If they
@@ -65,7 +72,16 @@ namespace ControlFlow
         // the program enters (2, 3, 5, 1) then the return should be 11.
         public static int SumIntegers(params int[] numbers)
         {
-            return default;
+            int counter = 0;
+            int total = 0;
+
+            while(counter != numbers.Length)
+            {
+                total = total + numbers[counter];
+                counter++;
+            }
+
+            return total;
         }
 
         // 2.3 - Write a method to compute the factorial of an integer return it. For example, if the
