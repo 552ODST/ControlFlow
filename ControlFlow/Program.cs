@@ -29,6 +29,7 @@ namespace ControlFlow
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
         {
+            //Hi
             if(number1 > number2)
             {
                 return number1;
