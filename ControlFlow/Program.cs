@@ -29,7 +29,18 @@ namespace ControlFlow
         // are the same, return either one.
         public static int Maximum(int number1, int number2)
         {
-            return default;
+            if(number1 > number2)
+            {
+                return number1;
+            }
+            if(number2 > number1)
+            {
+                return number2;
+            }
+            else
+            {
+                return number1;
+            }
         }
 
         // 1.3 - Write a method which takes two integers, the width and height of an image. Then
@@ -37,7 +48,18 @@ namespace ControlFlow
         // they are equal. Assume non-negative values.
         public static string LandscapeOrPortrait(int width, int height)
         {
-            return default;
+            if(width > height)
+            {
+                return "Landscape";
+            }
+            if(height > width)
+            {
+                return "Portrait";
+            }
+            else
+            {
+                return "Square";
+            }
         }
 
         // 1.4 - Your job is to write a program for a speed camera. For simplicity, ignore the details
@@ -55,7 +77,24 @@ namespace ControlFlow
         // Suspended" instead. Don't Worry about input validation.
         public static string SpeedTrap(int speedLimit, int speedCar)
         {
-            return default;
+            int demerit = 0;
+
+            if(speedCar <= speedLimit)
+            {
+                return "Okay";
+            }
+            if(speedCar > speedLimit)
+            {
+                int overLimit = speedCar - speedLimit;
+                demerit = overLimit / 5;
+
+                if (demerit > 12)
+                {
+                    return "License Suspended";
+                }
+            }
+
+            return demerit.ToString();
         }
 
         // Part 2, Control Flow. Come back to this section after completing the For/Foreach/While loops.
@@ -65,7 +104,22 @@ namespace ControlFlow
         // output should be 2.
         public static int DivisibleByNumber(int minNumber, int maxNumber, int divider)
         {
-            return default;
+            int result = 0;
+            int counter = minNumber;
+            
+            while(counter <= maxNumber)
+            {
+                if (counter%divider == 0)
+                {
+                    result++;
+                    counter++;
+                }
+                else
+                {
+                    counter++;
+                }
+            }
+            return result;
         }
 
         // 2.2 - Write a method to calculate the sum of all the integers and return it. For example if
@@ -89,14 +143,38 @@ namespace ControlFlow
         // that 0! = 1.
         public static int FindFactorial(int number)
         {
-            return default;
+            int result = number;
+            int counter = number;
+
+            if (number == 0)
+            {
+                result = 1;
+            }
+            else
+            {
+                while (counter != 1)
+                {
+                    counter--;
+                    result = counter * result;
+                }
+            }            
+            return result;
         }
 
         // 2.4 - Write a method that takes an array of integers. Then find the maximum of the numbers
         // and return it. For example, if the numbers are {5, 3, 8, 1, 4}, the program should return 8.
         public static int MaximumNumber(params int[] numbers)
         {
-            return default;
+            int maximum = 0;
+            
+            foreach (int number in numbers)
+            {
+                if(number > maximum)
+                {
+                    maximum = number;
+                }
+            }
+            return maximum;
         }
     }
 
